@@ -1,0 +1,255 @@
+
+/* By default, the width and height of an element is calculated like this:
+
+width + padding + border = actual width of an element
+height + padding + border = actual height of an element */
+
+*{  
+    /* margin-->border-->padding */
+    margin: 0;
+    padding: 0;
+
+    /* box-sizing : Defines how the width and height of an element are calculated: should they include padding and borders, or not*/
+    box-sizing: border-box;
+
+    /* The border-style property specifies what kind of border to display. */
+    border: none;
+
+    /* when you click on that particular box /element outline vastundi adi povadaniki */
+    outline: none;
+
+    /* The font-family property specifies the font for an element.
+    There are two types of font family names:
+        1.family-name - The name of a font-family, like "times", "courier", "arial", etc.
+        2.generic-family - The name of a generic-family, like "serif", "sans-serif", "cursive", "fantasy", "monospace". */
+    font-family: sans-serif;
+}
+
+body{
+    /* The min-height property defines the minimum height of an element.
+
+If the content is smaller than the minimum height, the minimum height will be applied.
+
+If the content is larger than the minimum height, the min-height property has no effect. */
+    min-height:100vh;
+
+    /* using flex box */
+    display:flex;
+
+    /* to align items along main axis */
+    justify-content: center;
+
+    /* to align items along vertical axis */
+    align-items:center;
+
+    /* to give bg colour */
+    background-color: black;
+}
+
+/* styling the main container */
+.container{
+    width:500px;
+    height: min-content;
+    background-color: white;
+    border-radius: 12.5px;
+    padding:28px;
+}
+
+/* styling the icon and text space kosam */
+.search-box{
+    width: 100%;
+    height: min-content; 
+    display:flex;
+    /* to get that space between icoon and text since the are in same class */
+     justify-content: space-between;
+/* background-color: yellowgreen; */
+    align-items: center;
+    /* background-color: #e6f5fb; */
+}
+
+/* styling the search box input:ah text */
+.search-box input{
+    width: 85%;
+    font-size:20px;
+    /* each starting letter of each word would be caps */
+    text-transform: capitalize;
+    color: black;
+    background-color: #e6f5fb;
+    padding:12px 16px;
+    border-radius:14px;
+
+}
+
+/* placeholder text ki colour ivvali */
+.search-box input::placeholder{
+    color: black;
+}
+
+
+/* button lo icon undi kada anduke button */
+/* .search-box button{ */
+    #searchBtn{
+width: 45.5px;
+height: 45.5px;
+background-color:#e6f5fb;
+border-radius:50%;
+cursor: pointer;
+/* allow control over cursor appearence  */
+font-size: 20px;
+}
+
+/* changing the colour when hovered */
+.search-box button:hover{
+color: white;
+background-color: #8ed9f7;
+}
+
+.search-box input:hover{
+    color: white;
+    background-color: #8ed9f7;
+    }
+
+
+
+/* 
+weather body--> weather box--------->weather details
+                -->temp                 -->humidity
+                -->description          -->wind speed
+                */
+
+
+/********* images part*********/
+
+
+
+.weather-body img{
+    width: 60%;
+    /* dani original width enta undo daani 60% ayipotadi */
+}
+
+.weather-body{
+    display: none;
+    /* by default none chestam ...js lo flex avtadi */
+    justify-content:center;
+     align-items: center;
+     /* changing main-axis to column */
+     flex-direction: column;
+     /* top and bottom margin kosam instead of*/
+     /* margin :20px 20px ;  */
+     margin-block:20px ;
+}
+
+.weather-box{
+    margin-block: 20px;
+    text-align: center;
+}
+
+.weather-box .temperature{
+    font-size: 40px;
+    font-weight:800;
+    position: relative;
+    /* degree c kosam parent-relative */
+}
+
+
+.weather-box .temperature sup{
+    font-size: 20px;
+    font-weight:600;
+    position: absolute;
+    /* child absolute */
+}
+
+
+.weather-box .description{
+    font-size: 20px;
+    font-weight:700;
+    text-transform: capitalize;
+}
+
+.weather-details{
+    width: 100%;
+    /* humidity and windspeed okka row lo ravadaniki */
+    display:flex;
+    /* even spacing between them and left&right borders also */
+    justify-content: space-evenly;
+    /* paina description ki ee row ki space kosam */
+    margin-top:30px;
+}
+
+/* rendu okke row lo ravadaniki */
+ .humidity,.wind{
+    display:flex;
+    align-items: center;
+}
+
+.dt{
+    display:flex;
+    align-items: center;
+}
+
+/* left right side spaces kosam */
+.humidity{
+    margin-left: 10px;
+}
+
+.wind{
+    margin-left: 10px;
+}
+
+.dt{
+    margin-top: 1000px;
+}
+
+/* weather details lo ni rendu icons kosam */
+.weather-details i{
+font-size: 35px;
+}
+
+/* weather details loni text...humidity and wind speed details -->spacing*/
+.weather-details .text{
+margin-left: 12.5px;
+font-size: 15px;
+}
+
+/* weather details loni text...humidity and wind speed details --text descp*/
+.text span{
+font-size: 20px;
+font-weight: 700;
+}
+
+/* //sorry loc not found inka image okkadani kinda okkati ravali kabbati */
+.location-not-found{
+    margin-top: 20px;
+    display: none;
+    /* image kanipinchadu js use chesi image display chestam */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* //image size chinnnaga cehsam */
+.location-not-found img{
+   width:80%;
+}
+
+/* //ah text ki styling chestunam */
+.location-not-found h1{
+    font-size: 20px;
+    color: #6b6b6b;
+    margin-block-end: 15px;
+    /* kindi nunchi margin */
+ }
+
+
+
+/* % – The % unit is used to set the font-size relative to the current font-size. 
+em – It is used to set the relative size. It is relative to the font-size of the element. 
+Note: Here 2em meaning 2times the size of current font. 
+rem – Relative to the browser base font-size. 
+px – It defines the font-size in terms of pixels. (96px = 1in)
+vh – Relative to 1% of the height of the viewport. 
+vw – Relative to 1% of the width of the viewport.  */
+
+/* 1vw equals one percent of the entire screen size so 100 vw would take up the entire width and 50vw obviously would take up half the width but the important thing about vw versus percentages is that viewport units are based on the entire screen size while percentages are relative to their parent.  */
+
